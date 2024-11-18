@@ -5,6 +5,7 @@ public class As1_CropCircle {
     double longitude;
     double radius; /* units are meters */
 
+    int alienCount;
 
     /// constructor - creates a new crop circle for aliens to land in
     /// parameters
@@ -21,5 +22,17 @@ public class As1_CropCircle {
         if (this.latitude > 0.0) {
             System.out.println("Creating new crop circle of radius " + this.radius + "m in northern hemisphere.");
         }
+
+        // start with no aliens
+        this.alienCount = 0;
+    }
+
+    void addAlien() {
+        this.alienCount++;
+    }
+
+    void removeAlien() {
+        /* avoid having negative aliens */
+        this.alienCount = Math.max(0, this.alienCount-1);
     }
 }
