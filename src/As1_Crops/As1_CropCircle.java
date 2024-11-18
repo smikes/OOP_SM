@@ -5,7 +5,7 @@ public class As1_CropCircle {
     double longitude;
     double radius; /* units are meters */
 
-    int alienCount;
+    private int alienCount;
 
     /// constructor - creates a new crop circle for aliens to land in
     /// parameters
@@ -28,11 +28,15 @@ public class As1_CropCircle {
     }
 
     void addAlien() {
-        this.alienCount++;
+        this.alienCount = this.alienCount + 1;
     }
 
     void removeAlien() {
         /* avoid having negative aliens */
-        this.alienCount = Math.max(0, this.alienCount-1);
+        this.alienCount = Math.max(0, this.alienCount - 1);
+    }
+
+    public int getAlienCount() {
+        return alienCount;
     }
 }
